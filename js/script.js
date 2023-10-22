@@ -6,7 +6,9 @@ const quantidadedoctorate = document.getElementById("qd");
 const quantidadSpecialization = document.getElementById("qe");
 const quantidadeDefinitionLess = document.getElementById("qsd");
 const usersQ1 = document.getElementById("q1");
+const qCadastros = document.getElementById("qc");
 const containerData = document.getElementById("container-data");
+const qCadastrosOntem = document.getElementById("qco");
 
 let userData;
 
@@ -23,6 +25,7 @@ const fetchData = async () => {
       },
     });
     userData = await response.json();
+
     processUserData(userData);
 
     // console.log(userData);
@@ -122,6 +125,36 @@ const processUserData = (data) => {
     quantidadedoctorate.innerHTML = counterDoctorate;
     quantidadSpecialization.innerHTML = counterSpecialization;
     quantidadeDefinitionLess.innerHTML = counterDefinitionLess;
+
+    // ====================== CADASTROS ------------------------
+    const dataAtual = new Date();
+    let dataOntem = new Date(dataAtual);
+    dataOntem.setDate(dataOntem.getDate() - 1);
+
+    let cadastrosOntem = [];
+    let cadastrosHoje = [];
+
+    for (let i = 0; i < userData.all.length; i++) {
+      const created_at = new Date(userData.all[i].created_at);
+
+      // Verifica se as datas de cadastro correspondem a hoje ou ontem
+      if (
+        dataOntem.getFullYear() === created_at.getFullYear() &&
+        dataOntem.getMonth() === created_at.getMonth() &&
+        dataOntem.getDate() === created_at.getDate()
+      ) {
+        cadastrosOntem.push(userData.all[i]);
+      } else if (
+        dataAtual.getFullYear() === created_at.getFullYear() &&
+        dataAtual.getMonth() === created_at.getMonth() &&
+        dataAtual.getDate() === created_at.getDate()
+      ) {
+        cadastrosHoje.push(userData.all[i]);
+      }
+    }
+
+    qCadastros.innerHTML = cadastrosHoje.length;
+    qCadastrosOntem.innerHTML = cadastrosOntem.length;
 
     institutionTitle.addEventListener("click", () => {
       if (userList.style.display === "none") {

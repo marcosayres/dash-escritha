@@ -14,16 +14,15 @@
 #container {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-wrap: wrap; /* Adiciona quebra de linha quando não há mais espaço */
 }
 
 #container p {
-  font-size: 6cqb;
+  font-size: 16px; /* Define um tamanho de fonte padrão para os parágrafos dentro de container */
 }
 
 #qtde-unica {
-  height: 30%;
-  width: 30%;
+  flex-basis: 30%; /* Define a largura base como 30% da largura do container */
   text-align: center;
   background-color: rgb(45, 133, 133);
   border-radius: 10px;
@@ -32,7 +31,14 @@
   margin: 10px;
   color: white;
   cursor: pointer;
-  border-left: 5px solid rgb(35, 40, 42);
+  border-right: 5px solid rgb(35, 40, 42);
+}
+
+/* Regra de mídia para tornar o design responsivo */
+@media screen and (max-width: 768px) {
+  #qtde-unica {
+    flex-basis: 45%; /* Reduz a largura para 45% quando a largura da tela é menor que 768px */
+  }
 }
 
 #container-data {
@@ -40,4 +46,11 @@
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+}
+
+/* Regra de mídia para tornar o design responsivo */
+@media screen and (max-width: 768px) {
+  #qtde-unica {
+    flex-basis: 45%; /* Reduz a largura para 45% quando a largura da tela é menor que 768px */
+  }
 }
