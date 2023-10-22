@@ -126,7 +126,7 @@ const processUserData = (data) => {
     quantidadSpecialization.innerHTML = counterSpecialization;
     quantidadeDefinitionLess.innerHTML = counterDefinitionLess;
 
-    // ====================== CADASTROS ------------------------
+    // ====================== CADASTROS DE HOJE E ONTEM ------------------------
     const dataAtual = new Date();
     let dataOntem = new Date(dataAtual);
     dataOntem.setDate(dataOntem.getDate() - 1);
