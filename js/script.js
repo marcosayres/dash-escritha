@@ -26,6 +26,7 @@ const fetchData = async () => {
     });
     userData = await response.json();
 
+    console.log(userData.all.institution);
     processUserData(userData);
 
     // console.log(userData);
@@ -103,6 +104,39 @@ const processUserData = (data) => {
     institutionBlock.style.padding = "10px";
     containerData.appendChild(institutionBlock);
   });
+
+  // ============================= GRÁFICO -------------------------
+
+  // Após o loop for onde você obtém a lista das 10 principais instituições, adicione o seguinte código para criar o gráfico de barras:
+
+  const institutionLabels = top10Institutions.map((pair) => pair[0]);
+  const studentCounts = top10Institutions.map((pair) => pair[1]);
+
+  const ctx = document.getElementById("top10Institution").getContext("2d");
+  const top10InstitutionChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: institutionLabels,
+      datasets: [
+        {
+          label: "Total de Pesquisadores",
+          data: studentCounts,
+          backgroundColor: "rgba(54, 162, 235, 0.2)",
+          borderColor: "rgba(54, 162, 235, 1)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  // ----------------////////////////////------------------
 
   sortedInstitutions.forEach((institution) => {
     const institutionTitle = document.createElement("h2");

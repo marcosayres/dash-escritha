@@ -11,56 +11,65 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>APRENDENDO 5</title>
   </head>
   <div>
     <header id="header">
-      <div id="cursos">Dashboard Escritha</div>
+      <img id="logo" src="./assets/logoEscritha.png"/>
     </header>
     <div id="container">
         <div id="qtde-unica">
             <div id="q1">Usuários</div>
-            <p id="qu">0</p>
+            <p id="qu" class="contentQtdeUnica">0</p>
         </div>
         
         <div id="qtde-unica">
-            <div id="q2">Instituições</div>
-            <p id="qi">0</p>
+            <div id="q2" >Instituições</div>
+            <p id="qi" class="contentQtdeUnica">0</p>
         </div>
         
         <div id="qtde-unica">
-            <div id="q3">Graduação</div>
-            <p id="qg">0</p>
+            <div id="q3" >Graduação</div>
+            <p id="qg" class="contentQtdeUnica">0</p>
         </div>
 
         <div id="qtde-unica">
-            <div id="q4">Mestrado</div>
-            <p id="qm">0</p>
+            <div id="q4" >Mestrado</div>
+            <p id="qm" class="contentQtdeUnica">0</p>
         </div>
     
         <div id="qtde-unica">
-            <div id="q5">Doutorado</div>
-            <p id="qd">0</p>
+            <div id="q5" >Doutorado</div>
+            <p id="qd" class="contentQtdeUnica">0</p>
         </div>
         
         <div id="qtde-unica">
-            <div id="q6">Especialização</div>
-            <p id="qe">0</p>
+            <div id="q6" >Especialização</div>
+            <p id="qe" class="contentQtdeUnica">0</p>
         </div>
         <div id="qtde-unica">
-            <div id="q7">Sem Formação Definida</div>
-            <p id="qsd">0</p>
+            <div id="q7" >Sem Formação Definida</div>
+            <p id="qsd" class="contentQtdeUnica">0</p>
         </div>
         <div id="qtde-unica">
-            <div id="q7">Cadastros HOJE</div>
-            <p id="qc">0</p>
+            <div id="q8" >Cadastros HOJE</div>
+            <p id="qc" class="contentQtdeUnica">0</p>
         </div>
         <div id="qtde-unica">
-            <div id="q7">Cadastros ONTEM</div>
-            <p id="qco">0</p>
+            <div id="q9" >Cadastros ONTEM</div>
+            <p id="qco" class="contentQtdeUnica">0</p>
         </div>
     </div>
-    <div id="container-data"></div>
+    <!-- <canvas id="myChart" width="200" height="100"></canvas> -->
+    <div id="container-data-cadastros">
+      <canvas id="cadastrosMesAtual" width="200" height="100"></canvas>
+    </div>
+    <div id="container-data">
+      <canvas id="top10Institution" width="200" height="100"></canvas>
+    </div>
+    <br />
     <script src="./js/script.js"></script>
   </body>
 </html>
