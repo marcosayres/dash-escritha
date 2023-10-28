@@ -24,15 +24,19 @@
 #qtde-unica {
   flex-basis: 30%; /* Define a largura base como 30% da largura do container */
   text-align: center;
-  background-color: rgb(248, 250, 250);
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 15px;
   padding: 10px;
   font-weight: bold;
   margin: 10px;
-  color: rgb(12, 122, 226);
   cursor: pointer;
-  border-right: 2px solid rgb(123, 118, 119);
   height: 120px;
+  border: 2px solid rgb(220, 217, 217);
+  box-shadow: 2px 2px rgb(192, 197, 197);
+}
+
+#qtde-unica:hover {
+  font-size: 20px;
 }
 
 /* Regra de mídia para tornar o design responsivo */
@@ -52,8 +56,8 @@
 }
 
 #container-data h2 {
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 /* Regra de mídia para tornar o design responsivo */
@@ -67,6 +71,66 @@
   width: 200px;
 }
 
+#q1 {
+  color: rgb(229, 28, 10);
+}
+
 #qu {
-  font-size: 60px;
+  color: rgb(229, 28, 10);
+}
+
+#q2 {
+  color: rgb(229, 28, 10);
+}
+
+#qi {
+  color: rgb(229, 28, 10);
+}
+
+#q3 {
+  color: rgb(53, 118, 238);
+}
+
+#qg {
+  color: rgb(53, 118, 238);
+}
+
+#q4 {
+  color: rgb(53, 118, 238);
+}
+
+#qm {
+  color: rgb(53, 118, 238);
+}
+
+#q5 {
+  color: rgb(53, 118, 238);
+}
+
+#qd {
+  color: rgb(53, 118, 238);
+}
+
+#q6 {
+  color: rgb(53, 118, 238);
+}
+
+#qe {
+  color: rgb(53, 118, 238);
+}
+
+#q8 {
+  color: rgb(239, 143, 9);
+}
+
+#qc {
+  color: rgb(239, 143, 9);
+}
+
+#q9 {
+  color: rgb(239, 143, 9);
+}
+
+#qco {
+  color: rgb(239, 143, 9);
 }

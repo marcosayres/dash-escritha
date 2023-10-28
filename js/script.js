@@ -100,7 +100,10 @@ const processUserData = (data) => {
     const [institution, userCount] = pair;
     const institutionBlock = document.createElement("div");
     institutionBlock.textContent = `${institution} - ${userCount} Alunos`;
-    institutionBlock.style.backgroundColor = "rgb(45, 133, 133)";
+    institutionBlock.display = "flex";
+    institutionBlock.style.backgroundColor = "gray";
+    institutionBlock.style.borderRadius = "15px";
+    institutionBlock.style.margin = "20px";
     institutionBlock.style.padding = "10px";
     containerData.appendChild(institutionBlock);
   });
